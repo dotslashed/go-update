@@ -1,6 +1,6 @@
 #!/bin/bash
 
-LATEST_VER=`curl -skiL "https://go.dev/dl/" | grep "filename" | grep ".linux-amd64.tar.gz</span>" | sed 's/<span class="filename">//g' | sed 's/<\/span>//g' | sed 's/^  //g' | sed 's/.linux-amd64.tar.gz//g' | sed 's/go//g'`
+LATEST_VER=`curl -skiL "https://go.dev/dl/" | grep "filename" | grep ".linux-amd64.tar.gz</a>" | sed 's/<td class=    "filename"><a class="download" href=".\+">//g' | sed 's/<\/a><\/td>//g' | sed 's/^  //g' | sed 's/.linux-amd64.tar    .gz//g' | sed 's/go//g' | head -n 1`
 
 echo "Latest version: $LATEST_VER"
 
